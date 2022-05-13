@@ -13,7 +13,7 @@ namespace Mars_Task2.Utilities
     {
 
 
-        public static void Waittobeclickable(IWebDriver driver, string locator, string locatorvalue, int seconds)
+        public static void Waittobecvisible(IWebDriver driver, string locator, string locatorvalue, int seconds)
         {
             var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
 

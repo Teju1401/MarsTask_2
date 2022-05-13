@@ -17,10 +17,10 @@ namespace Mars_Task2.Pages
         public void GotoManageListings(IWebDriver driver)
         {
 
-           // Wait.Waittobeclickable(driver, "XPath", "//*[@id='listing-management-section']/section[1]/div/a[3]", 60);
+           Wait.WaittobeVisible(driver, "XPath", "//*[@id='service-detail-section']/section[1]/div/a[3]", 60);
 
             // click on Manage Listings
-            IWebElement ManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
+            IWebElement ManageListings = driver.FindElement(By.XPath("//*[@id='service-detail-section']/section[1]/div/a[3]"));
             ManageListings.Click();
             
 
@@ -31,28 +31,24 @@ namespace Mars_Task2.Pages
         }
         public void EditManageListings(IWebDriver driver)
         {
-            Thread.Sleep(3000);
-            // click on Manage Listings to edit
-
             
-            IWebElement EditManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
+            // click on edit icon
+            
 
-            EditManageListings.Click();
+            //IWebElement EditManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
 
-            Thread.Sleep(5000);
+            //EditManageListings.Click();
 
-
-
-
+            //Thread.Sleep(4000);
 
 
             //Edit  Listing if the title is House Keeping
-            //
-            
 
-            IWebElement Title = driver.FindElement(By.XPath("//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr/td[3]"));
 
-            Assert.That(Title.Text == "House keeping", "title do not match");
+            //IWebElement Title = driver.FindElement(By.XPath("//*[@id='listing-management-section'']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]"));
+
+            //Assert.AreEqual("House keeping",Title.Text);
+            Wait.WaittobeVisible(driver, "XPath", "//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[2]/i", 60);
 
             IWebElement EditAction = driver.FindElement(By.XPath("//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[2]"));
             EditAction.Click();
@@ -63,19 +59,20 @@ namespace Mars_Task2.Pages
 
 
 
-            IWebElement EditTitle = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input"));
-            EditTitle.Click();
-            EditTitle.Clear();
-            
-            String EditTitletext = ExcelReader.ReadData(2, "Title");
+            IWebElement EditTitlebox = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input"));
 
-            EditTitle.SendKeys(EditTitletext);
+            EditTitlebox.Clear();
+            EditTitlebox.Click();
+            Thread.Sleep(1000);
+            String EditTitletext = ExcelReader.ReadData(1, "EditTitle");
+            Thread.Sleep(1000);
+            EditTitlebox.SendKeys(EditTitletext);
 
-            
+
             IWebElement EditCategory = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[3]/div[2]/div/div[1]/select"));
             EditCategory.Click();
 
-            string EditCategorytext = ExcelReader.ReadData(2, "Category");
+            string EditCategorytext = ExcelReader.ReadData(1, "EditCategory");
 
             EditCategory.SendKeys(EditCategorytext);
 
@@ -84,7 +81,7 @@ namespace Mars_Task2.Pages
             IWebElement EditSubcategory = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[3]/div[2]/div/div[2]/div[1]/select"));
             EditSubcategory.Click();
 
-            String EditSubcategorytext = ExcelReader.ReadData(2, "Sub Category");
+            String EditSubcategorytext = ExcelReader.ReadData(1, "EditSub Category");
 
             EditSubcategory.SendKeys(EditSubcategorytext);
 
@@ -98,12 +95,12 @@ namespace Mars_Task2.Pages
 
             IWebElement Wednessdaystarttime = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[5]/div[2]/input"));
             Wednessdaystarttime.Click();
-            string WednessdaystarttimeRead = ExcelReader.ReadData(2, "DayStart Time");
+            string WednessdaystarttimeRead = ExcelReader.ReadData(1, "EditDayStart Time");
             Wednessdaystarttime.SendKeys(WednessdaystarttimeRead);
 
             IWebElement WednessdayEndtime = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[5]/div[3]/input"));
             WednessdayEndtime.Click();
-            string WednessdayEndtimeRead = ExcelReader.ReadData(2, "DayEnd Time");
+            string WednessdayEndtimeRead = ExcelReader.ReadData(1, "EditDayEnd Time");
             WednessdayEndtime.SendKeys(WednessdayEndtimeRead);
 
             //Edit Service Type
@@ -122,7 +119,7 @@ namespace Mars_Task2.Pages
 
             IWebElement SkillexchangeTag = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[8]/div[4]/div/div/div/div/div/input"));
             SkillexchangeTag.Click();
-            string SkillexchangeTagRead = ExcelReader.ReadData(2, "SkillExchangeTag");
+            string SkillexchangeTagRead = ExcelReader.ReadData(1, "EditSkillExchangeTag");
             SkillexchangeTag.SendKeys(SkillexchangeTagRead);
             SkillexchangeTag.SendKeys(Keys.Enter);
 
@@ -141,12 +138,12 @@ namespace Mars_Task2.Pages
         {
 
             // click on Manage Listings to Delete
-            IWebElement DeleteManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
+            //IWebElement DeleteManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
 
-            DeleteManageListings.Click();
+            //DeleteManageListings.Click();
 
-            Thread.Sleep(5000);
-            Wait.Waittobeclickable(driver, "XPath", "//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[3]/i", 60);
+            //Thread.Sleep(5000);
+            Wait.Waittobecvisible(driver, "XPath", "//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[3]/i", 60);
 
             // Delete Listing
 

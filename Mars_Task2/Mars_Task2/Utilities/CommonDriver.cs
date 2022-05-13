@@ -34,7 +34,7 @@ namespace Mars_Task2.Utilities
         [OneTimeSetUp]
         public void loginFunction()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(6000);
 
             string filename = (@"C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\ShareSkills.xlsx");
 
@@ -44,7 +44,7 @@ namespace Mars_Task2.Utilities
                 
                 ExcelReader.ReadDataTable(stream, "Login");
 
-                var htmlreporter = new ExtentHtmlReporter(@"C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\ShareSkills.xlsx");
+                var htmlreporter = new ExtentHtmlReporter(@"C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2\MarsTask_2\Mars_Task2\Mars_Task2\ExtentReprt\");
                 extentreportObj = new ExtentReports();
                 extentreportObj.AttachReporter(htmlreporter);
 
@@ -69,7 +69,8 @@ namespace Mars_Task2.Utilities
         [TearDown]
         public void closeTestRun()
         {
-            driver.Quit();
+            extentreportObj.Flush();
+            //driver.Quit();
         }
 
 

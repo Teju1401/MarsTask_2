@@ -1,5 +1,6 @@
 ﻿using AutoItX3Lib;
 using Mars_Task2.Excel_Data_Reader;
+using Mars_Task2.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -18,7 +19,7 @@ namespace Mars_Task2.Pages
         {
             // search for Share Skill button
 
-            Thread.Sleep(6000);
+            Wait.WaittobeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[1]/div/div[2]/a", 60);
 
             IWebElement ShareSkill = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/div[2]/a"));
             ShareSkill.Click();
@@ -159,9 +160,9 @@ namespace Mars_Task2.Pages
 
 
 
-            // add file to the worksamples
+            //add file to the worksamples
 
-            IWebElement WorksampleFile = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[9]/div/div[2]/section/div/label/div/span/i"));
+           IWebElement WorksampleFile = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[9]/div/div[2]/section/div/label/div/span/i"));
 
             WorksampleFile.Click();
 
@@ -173,7 +174,7 @@ namespace Mars_Task2.Pages
 
             Thread.Sleep(2000);
 
-            autoit.Send(@"C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\worksamples\image2");
+            autoit.Send(@"C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\worksamples\Sample");
 
             Thread.Sleep(3000);
 
@@ -197,14 +198,16 @@ namespace Mars_Task2.Pages
 
         public void Viewshareskill(IWebDriver driver)
         {
-            // Wait.Waittobeclickable(driver, "XPath", "//*[@id='listing-management-section']/section[1]/div/a[3]", 60);
+            Wait.Waittobecvisible(driver, "XPath", "//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[1]/i", 60);
 
             // click on Manage Listings
-            IWebElement ManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
-            ManageListings.Click();
+            //Thread.Sleep(2000);
+
+            //IWebElement ManageListings = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[3]"));
+            //ManageListings.Click();
 
 
-            Thread.Sleep(5000);
+            //Thread.Sleep(2000);
 
 
             //View created share skill Listing

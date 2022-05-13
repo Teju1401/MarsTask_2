@@ -70,7 +70,7 @@ namespace Mars_Task2
         public void ViewSkill_Task2()
 
         {
-
+            Thread.Sleep(2000);
             ShareSkillHomePage viewSkillObj = new ShareSkillHomePage();
             viewSkillObj.Viewshareskill(driver);
             TakeScreenShot.ScreenShotMethod(driver);
@@ -92,30 +92,25 @@ namespace Mars_Task2
         [Test, Order(5)]
         public void EditManageListing_Task2()
         {
-
-            ExcelReader.ReadDataTable(stream, "ShareSkill");
-
-
-            try
-            {
-
-
-
-                //ManageListings EditManageListingObj = new ManageListings();
-                //EditManageListingObj.EditManageListings(driver);
-                test = extentreportObj.CreateTest("EditSkills", "Testing of edit page");
+            ExcelReader.ReadDataTable(stream, "EditSkills");
+                
+                            
+                test = extentreportObj.CreateTest("Editskillpage", "Testing of edit page");
                 ManageListings editSkillsObj = new ManageListings();
                 editSkillsObj.EditManageListings(driver);
                 TakeScreenShot.ScreenShotMethod(driver);
                 test.Log(Status.Info, "Skills editted successfully");
                 test.Log(Status.Pass, "Test passed");
 
-            }
-            catch 
-            {
+                
+
+
+            
+            
+            
                 test.Log(Status.Fail, "Test failed");
                 
-            }
+            
             
         }
 

@@ -74,7 +74,7 @@ namespace Mars_Task2.Excel_Data_Reader
                                where colData.colName == columnName && colData.rowNumber == rowNumber
                                select colData.colValue).SingleOrDefault();
 
-                //retrieve dta throughlambda
+                //retrieve data throughlambda
 
                 return data.ToString();
 
