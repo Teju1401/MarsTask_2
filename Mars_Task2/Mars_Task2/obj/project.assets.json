@@ -26,6 +26,30 @@
           "lib/netstandard2.0/DnsClient.dll": {}
         }
       },
+      "DotNetSeleniumExtras.PageObjects/3.11.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "3.10.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/SeleniumExtras.PageObjects.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.PageObjects.dll": {}
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects.Core/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.0.1"
+        },
+        "compile": {
+          "lib/net5.0/SeleniumExtras.PageObjects.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/SeleniumExtras.PageObjects.dll": {}
+        }
+      },
       "ExcelDataReader/3.6.0": {
         "type": "package",
         "compile": {
@@ -3362,6 +3386,36 @@
         "lib/netstandard1.3/DnsClient.xml",
         "lib/netstandard2.0/DnsClient.dll",
         "lib/netstandard2.0/DnsClient.xml"
+      ]
+    },
+    "DotNetSeleniumExtras.PageObjects/3.11.0": {
+      "sha512": "DJCLQ3beq1fzqpeQ5jTZwDqmzbOD2Xxsb/jCyShYam88CNwGGn5aBBqu4LVSj0sy0Ai76OauQQncYlC48VvQUQ==",
+      "type": "package",
+      "path": "dotnetseleniumextras.pageobjects/3.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
+        "dotnetseleniumextras.pageobjects.nuspec",
+        "lib/net35/SeleniumExtras.PageObjects.dll",
+        "lib/net40/SeleniumExtras.PageObjects.dll",
+        "lib/net45/SeleniumExtras.PageObjects.dll",
+        "lib/netstandard2.0/SeleniumExtras.PageObjects.dll"
+      ]
+    },
+    "DotNetSeleniumExtras.PageObjects.Core/4.0.1": {
+      "sha512": "Hbhoy7+qnd9IeUh2S8s30ylmL6X7w2/za/pqzkHgBYwvvykIdJg3n3/pVe9Tdi/ccGS/eNOkkwSY9RSa/Y7Z0Q==",
+      "type": "package",
+      "path": "dotnetseleniumextras.pageobjects.core/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "dotnetseleniumextras.pageobjects.core.4.0.1.nupkg.sha512",
+        "dotnetseleniumextras.pageobjects.core.nuspec",
+        "lib/net46/SeleniumExtras.PageObjects.dll",
+        "lib/net5.0/SeleniumExtras.PageObjects.dll",
+        "lib/netstandard2.0/SeleniumExtras.PageObjects.dll"
       ]
     },
     "ExcelDataReader/3.6.0": {
@@ -10447,6 +10501,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "DotNetSeleniumExtras.PageObjects >= 3.11.0",
+      "DotNetSeleniumExtras.PageObjects.Core >= 4.0.1",
       "ExcelDataReader >= 3.6.0",
       "ExcelDataReader.DataSet >= 3.6.0",
       "ExtentReports >= 4.1.0",
@@ -10506,6 +10562,14 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "DotNetSeleniumExtras.PageObjects": {
+            "target": "Package",
+            "version": "[3.11.0, )"
+          },
+          "DotNetSeleniumExtras.PageObjects.Core": {
+            "target": "Package",
+            "version": "[4.0.1, )"
+          },
           "ExcelDataReader": {
             "target": "Package",
             "version": "[3.6.0, )"

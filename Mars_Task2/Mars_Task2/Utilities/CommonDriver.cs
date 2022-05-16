@@ -14,6 +14,7 @@ using Mars_Task2.Excel_Data_Reader;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using System.Threading;
+using SeleniumExtras.PageObjects;
 
 namespace Mars_Task2.Utilities
 {
@@ -50,28 +51,38 @@ namespace Mars_Task2.Utilities
 
 
 
-            
-            // launch chrome driver
-
             driver = new ChromeDriver();
 
             driver.Manage().Window.Maximize();
+
+            driver.Navigate().GoToUrl("http://localhost:5000/");
 
             // Login page object initialization and definition
 
             LoginPage LoginpageObj = new LoginPage();
 
-            LoginpageObj.LoginSteps(driver);
+            PageFactory.InitElements(driver, LoginpageObj);
 
+            LoginpageObj.SignInButton();
 
+            string UserName = ExcelReader.ReadData(1, "EmailId");
+            LoginpageObj.EmailId.SendKeys(UserName);
+            string Passwords = ExcelReader.ReadData(1, "Password");
+            LoginpageObj.Password.SendKeys(Passwords);
+            LoginpageObj.ClickLoginButton();
+            Thread.Sleep(3000);
+
+           
 
         }
         [TearDown]
         public void closeTestRun()
         {
             extentreportObj.Flush();
-            //driver.Quit();
+            
         }
+
+        
 
 
 

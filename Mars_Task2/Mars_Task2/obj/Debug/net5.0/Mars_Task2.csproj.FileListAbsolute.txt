@@ -184,3 +184,4 @@ C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2
 C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2\MarsTask_2\Mars_Task2\Mars_Task2\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2\MarsTask_2\Mars_Task2\Mars_Task2\bin\Debug\net5.0\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2\MarsTask_2\Mars_Task2\Mars_Task2\bin\Debug\net5.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+C:\Users\teja.LAPTOP-JPPE5QFM\Desktop\Teja\Automation_Testing\Project_Mars_Task2\MarsTask_2\Mars_Task2\Mars_Task2\bin\Debug\net5.0\SeleniumExtras.PageObjects.dll
